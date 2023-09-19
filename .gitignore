@@ -2,7 +2,7 @@
 venv
 static
 media
-
+.env
 **/__pycache__
 
 drf_authentification_instagramm.zip
