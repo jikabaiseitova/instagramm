@@ -1,8 +1,16 @@
 .idea
 venv
-static
+
+#staticfiles
+backend/static
 media
-.env
+
+#cashe
 **/__pycache__
 
-drf_authentification_instagramm.zip
+#env files
+.env
+.env.prod
+.env.prod.db
+
+

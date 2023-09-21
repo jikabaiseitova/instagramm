@@ -27,26 +27,6 @@ def post_list_create_api_view(request):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-#
-# @api_view(http_method_names=['GET', 'PUT', 'DELETE'])
-# @authentication_classes([TokenAuthentication, ])
-# @permission_classes([IsAuthenticated, IsAuthor])
-# def post_retrieve_update_destroy_api_view(request, pk):
-#     if request.method == 'GET':
-#         post = Post.objects.get(id=pk)
-#         serializer = PostSerializer(post)
-#         return Response(serializer.data)
-#     if request.method == 'PUT':
-#         user = request.user
-#         post = Post.objects.get(id=pk)
-#         serializer = PostSerializer(post, data=request.data)
-#         if serializer.is_valid():
-#             serializer.save()
-#             return Response(serializer.data, status=status.HTTP_200_OK)
-#         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-#
-
-
 class PostRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
